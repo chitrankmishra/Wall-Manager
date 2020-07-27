@@ -1,0 +1,71 @@
+@import 'template.css';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: #091921;
+}
+
+textarea#add-task {
+	color: #091921;
+	height: 250px;
+	/* background: #091921; */
+}
+
+.btn {
+	width: 200px;
+}
+.btn-bg {
+	background: #091921;
+	color: white;
+}
+.line {
+	color: #091921;
+	padding: 10px;
+	line-height: 30px;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+.urgent {
+	color: #f02f2f;
+}
+
+.white-box {
+	background-color: var(--white);
+	padding: 10px 20px 10px 20px;
+	border-radius: 10px;
+	margin-top: 10px;
+	color: #091921;
+}
+#add-task-div-data,
+#task-text {
+	display: none;
+}
+
+.modal-row {
+	margin: 10px 0px 10px 0px;
+	vertical-align: middle;
+}
+#main-modal {
+	color: #091921;
+}
+#modal-header {
+}
+#modal-title {
+}
+#modal-body {
+	line-height: 40px;
+	border: 1px solid #091921;
+}
+#modal-footer {
+}
+
+@media screen and (max-width: 700px) {
+}

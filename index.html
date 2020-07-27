@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<title>Javascript Clock</title>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0 shrink-to-fit=no"
+		/>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+		<meta content="utf-8" http-equiv="encoding" />
+		<link rel="shortcut icon" href="" type="image/x-icon" />
+
+		<!-- Jquery -->
+		<script type="text/javascript" src="jquery/jquery.min.js"></script>
+
+		<!-- Bootstrap -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="bootstrap/css/bootstrap.min.css"
+		/>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- FontAwesome -->
+		<link href="fontawesome/css/all.css" rel="stylesheet" />
+		<script defer src="fontawesome/js/all.js"></script>
+
+		<!-- Axios -->
+		<script type="text/javascript" src="axios/axios.min.js"></script>
+
+		<!-- Personalized Includes -->
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<!-- Javascript -->
+		<script type="text/javascript" src="js/template.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+	</head>
+
+	<body class="row">
+		<div class="col-sm-12">
+			<div class="row blue">
+				<div class="col-sm-3 red"></div>
+				<div class="col-sm-6 red" id="clock-div">
+					<div class="clock">
+						<div class="hour">
+							<div class="hr" id="hr"></div>
+						</div>
+						<div class="min">
+							<div class="mn" id="mn"></div>
+						</div>
+						<div class="sec">
+							<div class="sc" id="sc"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3 red"></div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		initialize();
+	</script>
+</html>

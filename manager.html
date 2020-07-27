@@ -1,0 +1,137 @@
+<html>
+	<head>
+		<title>Javascript Clock</title>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0 shrink-to-fit=no"
+		/>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+		<meta content="utf-8" http-equiv="encoding" />
+		<link rel="shortcut icon" href="" type="image/x-icon" />
+
+		<!-- Jquery -->
+		<script type="text/javascript" src="jquery/jquery.min.js"></script>
+
+		<!-- Bootstrap -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="bootstrap/css/bootstrap.min.css"
+		/>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- FontAwesome -->
+		<link href="fontawesome/css/all.css" rel="stylesheet" />
+		<script defer src="fontawesome/js/all.js"></script>
+
+		<!-- Axios -->
+		<script type="text/javascript" src="axios/axios.min.js"></script>
+
+		<!-- Personalized Includes -->
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="css/manager.css" />
+		<!-- Javascript -->
+		<script type="text/javascript" src="js/template.js"></script>
+		<script type="text/javascript" src="js/manager.js"></script>
+	</head>
+
+	<body class="row">
+		<div class="modal fade Varela highlight2" id="main-modal">
+			<div class="modal-dialog modal-dialog-centered modal-lg">
+				<div class="modal-content">
+					<!-- Modal Header -->
+					<div class="modal-header" id="modal-header">
+						<h4 class="modal-title" id="modal-title">Modal Heading</h4>
+
+						<button type="button" class="close" data-dismiss="modal">
+							&times;
+						</button>
+					</div>
+
+					<!-- Modal body -->
+					<div class="modal-body" id="modal-body">Body</div>
+
+					<!-- Modal footer -->
+					<div class="modal-footer" id="modal-footer">
+						Footer
+						<!-- <button type="button" class="btn btn-danger" data-dismiss="modal">
+							Close
+						</button> -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-12">
+			<div class="row">
+				<h1 class="BebasNeue center">Javascript Clock Task Manager</h1>
+			</div>
+			<br /><br /><br />
+			<div class="row">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
+					<div class="row Varela center">
+						<button
+							type="button"
+							class="btn btn-light"
+							id="add-task-btn"
+							data-toggle="modal"
+							data-target="#main-modal"
+							onclick="openAddTaskDialog()"
+						>
+							Add New Task
+						</button>
+					</div>
+					<div class="row Varela white-box center">
+						Task Present
+					</div>
+					<div id="task-box"></div>
+				</div>
+
+				<div class="col-sm-3"></div>
+			</div>
+		</div>
+
+		<div id="add-task-div-data">
+			<div id="add-task-title">
+				<div class="row modal-row">
+					Add New Task
+				</div>
+			</div>
+
+			<div id="add-task-body">
+				<div class="row modal-row">
+					<textarea
+						class="form-control"
+						id="add-task"
+						placeholder="Write task here..."
+					></textarea>
+				</div>
+				<div class="row modal-row">
+					<input type="checkbox" class="form-control-sm" id="add-urgent" />
+					&nbsp;&nbsp;<label for="add-urgent">Urgent</label>
+				</div>
+			</div>
+			<div id="add-task-footer">
+				<div class="row modal-row">
+					<button class="btn btn-bg">Add</button>
+				</div>
+			</div>
+		</div>
+		<div id="task-text">
+			<div class="row Varela white-box">
+				<div class="col-sm-9 line {urgent}" id="">
+					{task-data}
+				</div>
+				<div class="col-sm-3 center" id="">
+					<button class="btn btn-danger" onclick="deleteTask(this,{taskid})">
+						Done
+					</button>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		initialize();
+	</script>
+</html>
