@@ -10,6 +10,7 @@ body {
 	--white: #fff;
 	--red: #ff105e;
 	--grey: #a9a9a9;
+	--darkgrey: #808080;
 }
 
 .noselect {
@@ -40,6 +41,9 @@ body {
 }
 .color-red {
 	color: var(--red);
+}
+.color-darkgrey {
+	color: var(--darkgrey);
 }
 
 .center {

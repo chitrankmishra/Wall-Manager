@@ -70,14 +70,14 @@
 			</div>
 		</div>
 		<div class="templates">
-			<div id="task-template">
+			<div id="task-element-template">
 				<div class="row task-element">
 					<div class="col-sm-12">
 						<div>
 							<i class="fas fa-angle-right color-red"></i>
 							&nbsp&nbsp {title}
 						</div>
-						<div class="pl-3">
+						<div class="pl-3 color-darkgrey">
 							<i class="fas fa-angle-double-right"></i>
 							&nbsp&nbsp {notes}
 						</div>
@@ -89,8 +89,41 @@
 				</div>
 			</div>
 			<div id="calendar-template">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="calendar center">
+							<div class="date">
+								<h3 id="calendar-header">{month}, {year}</h3>
+								<div class="days" id="day-arrange">
+									<div class="day">{day-name}</div>
+									<div class="number">{day-number}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div id="calendar-events"></div>
+					</div>
+				</div>
+			</div>
+			<div id="calendar-element-template">
 				<div class="row calendar-element">
-					<div class="col-sm-12">cskcnk</div>
+					<div class="col-sm-12">
+						<div style="color:{color};">
+							<i class="fas fa-angle-right"></i>
+							&nbsp&nbsp {title}
+						</div>
+						<div class="pl-3 color-darkgrey">
+							<i class="fas fa-angle-double-right"></i>
+							&nbsp&nbsp {description}
+						</div>
+						<div class="text-right color-grey">
+							{startTime} &nbsp&nbsp
+							<i class="fas fa-calendar-alt"></i>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
