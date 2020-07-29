@@ -61,6 +61,7 @@ async function getMainTaskListData() {
 	var template = document.getElementById('task-element-template').innerHTML;
 	var final_text = '';
 	tasks = response['result'];
+	if (tasks == 'No Tasks Found') return;
 	for (i in tasks) {
 		temp_text = template;
 		if (tasks[i]['notes'] != null)
