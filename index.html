@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Javascript Clock</title>
+		<title>Wall Manager</title>
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1.0 shrink-to-fit=no"
@@ -37,9 +37,16 @@
 
 	<body class="row">
 		<div class="col-sm-12">
-			<div class="row blue">
-				<div class="col-sm-3 red"></div>
-				<div class="col-sm-6 red" id="clock-div">
+			<div class="row" id="main-div">
+				<div class="col" id="tasks-div">
+					<div class="row BebasNeue font-big text-right">
+						Tasks
+					</div>
+					<div class="row font-small">
+						<div class="col-sm-12 Ubuntu" id="tasks-display-div"></div>
+					</div>
+				</div>
+				<div class="col-sm-5" id="clock-div">
 					<div class="clock">
 						<div class="hour">
 							<div class="hr" id="hr"></div>
@@ -52,7 +59,39 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-3 red"></div>
+				<div class="col" id="calendar-div">
+					<div class="row BebasNeue font-big text-left">
+						Events
+					</div>
+					<div class="row font-small">
+						<div class="col-sm-12 Ubuntu" id="calendar-display-div"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="templates">
+			<div id="task-template">
+				<div class="row task-element">
+					<div class="col-sm-12">
+						<div>
+							<i class="fas fa-angle-right color-red"></i>
+							&nbsp&nbsp {title}
+						</div>
+						<div class="pl-3">
+							<i class="fas fa-angle-double-right"></i>
+							&nbsp&nbsp {notes}
+						</div>
+						<div class="text-right color-grey">
+							{updated} &nbsp&nbsp
+							<i class="fas fa-calendar-alt"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="calendar-template">
+				<div class="row calendar-element">
+					<div class="col-sm-12">cskcnk</div>
+				</div>
 			</div>
 		</div>
 	</body>
