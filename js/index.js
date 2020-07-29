@@ -19,6 +19,12 @@ function initialize() {
 		mn.style.transform = `rotateZ(${mm}deg)`;
 		sc.style.transform = `rotateZ(${ss}deg)`;
 	});
+
+	setInterval(() => {
+		getCalendarDetails();
+		getMainTaskListData();
+	}, 1800000);
+
 	getCalendarDetails();
 	getMainTaskListData();
 }
