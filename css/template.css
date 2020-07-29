@@ -6,7 +6,8 @@ body {
 }
 
 :root {
-	--bgcolor: #091921;
+	/* #091921 */
+	--bgcolor: #141414;
 	--white: #fff;
 	--red: #ff105e;
 	--grey: #a9a9a9;
