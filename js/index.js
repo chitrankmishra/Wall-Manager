@@ -145,7 +145,6 @@ async function getCalendarDetails() {
 		var description = events[i]['description'];
 		var start_time = getDateFromISO(events[i]['startTime']);
 		var end_time = getDateFromISO(events[i]['endTime']);
-		var updated = getDateFromISO(events[i]['updated']);
 
 		temp_text = temp_text.replace('{title}', title);
 		temp_text = temp_text.replace('{startTime}', start_time);
@@ -153,7 +152,7 @@ async function getCalendarDetails() {
 		if (description != null)
 			temp_text = temp_text.replace('{description}', description);
 		else temp_text = temp_text.replace('{description}', 'No details');
-		// console.log(color, backgroundColor, title, start_time, end_time, updated);
+		// console.log(color, backgroundColor, title, start_time, end_time);
 		final_text += temp_text;
 	}
 	destination.innerHTML = final_text;
