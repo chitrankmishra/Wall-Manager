@@ -1,3 +1,45 @@
+calendar_list_color_codes = [
+	'#ffffff',
+	'#ac725e',
+	'#d06b64',
+	'#f83a22',
+	'#fa573c',
+	'#ff7537',
+	'#ffad46',
+	'#42d692',
+	'#16a765',
+	'#7bd148',
+	'#b3dc6c',
+	'#fbe983',
+	'#fad165',
+	'#92e1c0',
+	'#9fe1e7',
+	'#9fc6e7',
+	'#4986e7',
+	'#9a9cff',
+	'#b99aff',
+	'#c2c2c2',
+	'#cabdbf',
+	'#cca6ac',
+	'#f691b2',
+	'#cd74e6',
+	'#a47ae2',
+];
+calendar_event_color_codes = [
+	'#ffffff',
+	'#a4bdfc',
+	'#7ae7bf',
+	'#dbadff',
+	'#ff887c',
+	'#fbd75b',
+	'#ffb878',
+	'#46d6db',
+	'#16a765',
+	'#5484ed',
+	'#51b749',
+	'#dc2127',
+];
+
 function initialize() {
 	const deg = 6;
 	const hr = document.querySelector('#hr');
@@ -140,12 +182,21 @@ async function getCalendarDetails() {
 	for (i in events) {
 		temp_text = template;
 		var color = events[i]['color'];
-		var backgroundColor = events[i]['backgroundColor'];
 		var title = events[i]['summary'];
 		var description = events[i]['description'];
 		var start_time = getDateFromISO(events[i]['startTime']);
 		var end_time = getDateFromISO(events[i]['endTime']);
-		// console.log(color, backgroundColor, title, start_time, end_time);
+
+		var backgroundColor = calendar_event_color_codes[events[i]['color']];
+		if (backgroundColor == undefined)
+			var backgroundColor = calendar_list_color_codes[events[i]['color']];
+
+		console.log(
+			calendar_list_color_codes[color],
+			calendar_event_color_codes[color],
+			backgroundColor,
+			title
+		);
 
 		temp_text = temp_text.replace('{title}', title);
 		temp_text = temp_text.replace('{startTime}', start_time);
