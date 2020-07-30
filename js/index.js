@@ -39,6 +39,20 @@ calendar_event_color_codes = [
 	'#51b749',
 	'#dc2127',
 ];
+var months = [
+	'January',
+	'February',
+	'March',
+	'April',
+	'May',
+	'June',
+	'July',
+	'August',
+	'September',
+	'October',
+	'November',
+	'December',
+];
 
 function initialize() {
 	const deg = 6;
@@ -78,17 +92,16 @@ function validateEmail(email) {
 
 function getDateFromISO(date_value) {
 	var date_value = new Date(date_value);
-	var new_date_value = date_value.getFullYear() + '-';
+	var new_date_value = '';
+	if (date_value.getDate() < 10) new_date_value += '0';
+	new_date_value += date_value.getDate() + '-';
 	if (date_value.getMonth() + 1 < 10) new_date_value += '0';
 	new_date_value += date_value.getMonth() + 1 + '-';
-	if (date_value.getDate() < 10) new_date_value += '0';
-	new_date_value += date_value.getDate() + ' ';
+	new_date_value += date_value.getFullYear() + '&nbsp&nbsp&nbsp';
 	if (date_value.getHours() < 10) new_date_value += '0';
 	new_date_value += date_value.getHours() + ':';
 	if (date_value.getMinutes() < 10) new_date_value += '0';
-	new_date_value += date_value.getMinutes() + ':';
-	if (date_value.getSeconds() < 10) new_date_value += '0';
-	new_date_value += date_value.getSeconds();
+	new_date_value += date_value.getMinutes();
 	return new_date_value;
 }
 
@@ -124,20 +137,7 @@ async function getCalendarDetails() {
 	var destination = document.getElementById('calendar-display-div');
 
 	today = new Date();
-	var months = [
-		'January',
-		'February',
-		'March',
-		'April',
-		'May',
-		'June',
-		'July',
-		'August',
-		'September',
-		'October',
-		'November',
-		'December',
-	];
+
 	month = months[today.getMonth()];
 	year = today.getFullYear();
 	template = template.replace('{month}', month);
@@ -166,7 +166,7 @@ async function getCalendarDetails() {
 	today_date = today.getDate();
 	for (var i = 1; i <= no_of_days; i++) {
 		if (i == today_date)
-			final_text += '<div class="number active">' + i + '</div>\n';
+			final_text += '<div class=" active number">' + i + '</div>\n';
 		else final_text += '<div class="number">' + i + '</div>\n';
 	}
 	day_arrange.innerHTML = final_text;
