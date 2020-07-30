@@ -65,7 +65,7 @@ function initialize() {
 	setInterval(() => {
 		getCalendarDetails();
 		getMainTaskListData();
-	}, 1800000);
+	}, 600000);
 
 	getCalendarDetails();
 	getMainTaskListData();
@@ -191,12 +191,12 @@ async function getCalendarDetails() {
 		if (backgroundColor == undefined)
 			var backgroundColor = calendar_list_color_codes[events[i]['color']];
 
-		console.log(
-			calendar_list_color_codes[color],
-			calendar_event_color_codes[color],
-			backgroundColor,
-			title
-		);
+		// console.log(
+		// 	calendar_list_color_codes[color],
+		// 	calendar_event_color_codes[color],
+		// 	backgroundColor,
+		// 	title
+		// );
 
 		temp_text = temp_text.replace('{title}', title);
 		temp_text = temp_text.replace('{startTime}', start_time);
