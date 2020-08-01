@@ -137,6 +137,8 @@ async function getCalendarDetails() {
 	var destination = document.getElementById('calendar-display-div');
 
 	today = new Date();
+	path = 'getCalendarDetails/';
+	response = await makeAsyncGetRequest(path);
 
 	month = months[today.getMonth()];
 	year = today.getFullYear();
@@ -170,9 +172,6 @@ async function getCalendarDetails() {
 		else final_text += '<div class="number">' + i + '</div>\n';
 	}
 	day_arrange.innerHTML = final_text;
-
-	path = 'getCalendarDetails/';
-	response = await makeAsyncGetRequest(path);
 
 	destination = document.getElementById('calendar-events');
 	template = document.getElementById('calendar-element-template').innerHTML;
