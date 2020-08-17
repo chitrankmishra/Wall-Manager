@@ -91,6 +91,8 @@ function validateEmail(email) {
 }
 
 function getDateFromISO(date_value) {
+	if (date_value.substring(date_value.length - 3, date_value.length) == 'GMT')
+		date_value = date_value.substring(0, date_value.length - 4);
 	var date_value = new Date(date_value);
 	var new_date_value = '';
 	if (date_value.getDate() < 10) new_date_value += '0';
